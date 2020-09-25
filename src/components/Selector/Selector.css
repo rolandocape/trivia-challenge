@@ -1,0 +1,13 @@
+label {
+    color: #483d8b;
+    font-family: serif;
+    font-size: 18px;
+}
+
+select {
+    padding: 8px 15px;
+    font-size: 13px;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 100%;
+}

@@ -10,6 +10,7 @@ import {
 import { answerQuestion } from '../../store/actions/quiz';
 import Question from '../../components/Question/Question';
 import styles from './Quiz.module.css';
+import Loader from '../../components/Loader/Loader';
 
 
 const Quiz = props => {
@@ -18,7 +19,8 @@ const Quiz = props => {
     const [status, setButtonStatus] = useState(true);
     const question = useSelector(currentQuestionSelector);
     const quizQuestions = useSelector(quizSelector);
-    const index = useSelector(questionIndexSelector)
+    const index = useSelector(questionIndexSelector);
+    const loading = useSelector(quizLoadingSelector);
     const dispatch = useDispatch();
 
     const onAnswerQuestion = (selectedAnswer) => {
@@ -36,7 +38,8 @@ const Quiz = props => {
 
     return (
         <div className="container">
-            {question && <div className={styles.card}>
+            {loading && <Loader/>}
+            {!loading && question && <div className={styles.card}>
                 <Question query={question} clicked={onAnswerQuestion}/>
                 <button type="button" className={styles['submit-btn']} disabled={status} onClick={onSubmitAnswer}>Submit</button>
                 <div className={styles.pagination}>{index + 1} of {quizQuestions.length}</div>

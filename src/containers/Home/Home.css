@@ -1,0 +1,36 @@
+input {
+    padding: 8px 15px;
+    font-size: 13px;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: calc(100% - 30px);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle {
+    padding: 2em;
+    max-width: 500px;
+    line-height: 1.5;
+    color: #483d8b;
+    text-align: center;
+}
+
+.start-btn {
+    background-color: #868892;
+    border: none;
+    color: #fff;
+    border-radius: .3rem;
+    align-self: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: .4rem 1rem;
+}
+
+.start-btn:hover {
+    background-color: #68626b;
+}

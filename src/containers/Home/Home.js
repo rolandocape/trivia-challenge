@@ -5,6 +5,8 @@ import { startQuiz } from '../../store/actions/quiz';
 import { categories, difficultyOptions, types } from '../../share/constants';
 import Selector from "../../components/Selector/Selector";
 
+import './Home.css';
+
 const Home = props => {
 
     const [difficulty, setDifficulty] = useState(difficultyOptions[1].value);
@@ -24,12 +26,12 @@ const Home = props => {
     return (
         <div className="container">
             <h2>Welcome to the Trivia Challenge</h2>
-            <h4>Please select from the following options or use the default ones to start a new Trivia Game</h4>
-            <form onSubmit={onSubmitForm}>
+            <h4 className="subtitle">Please select from the following options or use the default ones to start a new Trivia Game</h4>
+            <form className="card" onSubmit={onSubmitForm}>
                 <Selector id="difficulty" value={difficulty} options={difficultyOptions} changed={d => setDifficulty(d)}/>
                 <Selector id="category" value={category} options={categories} changed={c => setCategory(+c)}/>
                 <Selector id="type" value={type} options={types} changed={t => setType(t)}/>
-                <label htmlFor="amount">Enter number of questions</label>
+                <label htmlFor="amount">Enter number of questions:</label>
                 <input
                     type="number"
                     name="amount"
@@ -39,7 +41,8 @@ const Home = props => {
                     value={amount}
                     onChange={e => setAmount(+e.currentTarget.value)}
                 />
-                <button type="submit">Begin</button>
+                <p className="subtitle">Can you score 100%?</p>
+                <button className="start-btn" type="submit">Begin</button>
             </form>
         </div>
     )

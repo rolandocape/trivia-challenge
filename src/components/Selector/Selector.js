@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './Selector.css';
+
 const Selector = ({ id, value, options, changed }) => {
     return (
-        <div>
+        <div style={{ marginBottom: '30px' }}>
             <label htmlFor={id}>Select {id}: </label>
             <select
                 name={id}
