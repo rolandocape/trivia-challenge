@@ -1,0 +1,25 @@
+.results {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 10vh;
+    max-width: 800px;
+}
+
+.restart-btn {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: .4rem 1rem;
+    background-color: #868892;
+    border: none;
+    color: #fff;
+    border-radius: .3rem;
+    align-self: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 40px;
+}
+
+.restart-btn:hover {
+    background-color: #68626b;
+}

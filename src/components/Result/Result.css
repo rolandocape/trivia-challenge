@@ -1,0 +1,22 @@
+.right-answer {
+    background-color: #4BB543;
+    color: #fff;
+    height: 86px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.wrong-answer {
+    background-color: #FF9494;
+    color: #fff;
+    height: 86px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.text-style {
+    margin: 0;
+    padding: 5px;
+}
+
+

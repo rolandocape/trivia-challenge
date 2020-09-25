@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  background-color: lightgray;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+}
+
+

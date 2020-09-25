@@ -1,0 +1,29 @@
+.answer {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: left;
+    min-height: 3rem;
+    border-radius: .5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #fff;
+    color: #42444a;
+    border: none;
+    cursor: pointer;
+}
+
+.answer:hover {
+    background-color: #868892;
+    color: #fff;
+}
+
+.answer:focus {
+    background-color: #60626b;
+    color: #fff;
+    outline: none;
+}
+
+.question-text {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
