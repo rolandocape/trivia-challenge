@@ -1,5 +1,6 @@
 import React from 'react';
 import { decode } from 'he';
+import PropTypes from 'prop-types';
 
 import styles from './Question.module.css';
 
@@ -18,6 +19,11 @@ const Question = ({ query, clicked }) => {
         </>
     )
 };
+
+Question.propTypes = {
+    query: PropTypes.object,
+    clicked: PropTypes.func
+}
 
 export default Question;
 

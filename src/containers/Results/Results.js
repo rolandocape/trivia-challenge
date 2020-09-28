@@ -1,18 +1,21 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
 import { restartQuiz } from '../../store/actions/quiz';
 import { resultsSelector } from '../../store/selectors/quiz';
 import Result from '../../components/Result/Result';
 import './Results.css';
 
-const Results = props => {
+const Results = () => {
     const dispatch = useDispatch();
     const results = useSelector(resultsSelector);
+    const history = useHistory();
     const correctAnswers = results.filter(r => r.correct).length;
 
     const onPLayAgain = () => {
         dispatch(restartQuiz());
-        props.history.push('/');
+        history.push('/');
     }
 
     return (

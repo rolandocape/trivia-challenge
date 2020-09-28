@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import {
     quizLoadingSelector,
@@ -12,8 +13,7 @@ import Question from '../../components/Question/Question';
 import styles from './Quiz.module.css';
 import Loader from '../../components/Loader/Loader';
 
-
-const Quiz = props => {
+const Quiz = () => {
 
     const [answer, setAnswer] = useState(null);
     const [status, setButtonStatus] = useState(true);
@@ -22,6 +22,7 @@ const Quiz = props => {
     const index = useSelector(questionIndexSelector);
     const loading = useSelector(quizLoadingSelector);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const onAnswerQuestion = (selectedAnswer) => {
         setAnswer(selectedAnswer);
@@ -32,7 +33,7 @@ const Quiz = props => {
         dispatch(answerQuestion(answer));
         setButtonStatus(true);
         if (index === quizQuestions.length - 1) {
-            props.history.push('/results')
+            history.push('/results')
         }
     }
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { startQuiz } from '../../store/actions/quiz';
 import { categories, difficultyOptions, types } from '../../share/constants';
@@ -7,7 +8,7 @@ import Selector from "../../components/Selector/Selector";
 
 import './Home.css';
 
-const Home = props => {
+const Home = () => {
 
     const [difficulty, setDifficulty] = useState(difficultyOptions[1].value);
     const [category, setCategory] = useState(categories[0].value);
@@ -15,12 +16,12 @@ const Home = props => {
     const [amount, setAmount] = useState(10);
 
     const dispatch = useDispatch();
-
+    const history = useHistory();
 
     const onSubmitForm = async (e) => {
         e.preventDefault();
         await dispatch(startQuiz({ difficulty, category, type, amount }));
-        props.history.push('/quiz');
+        history.push('/quiz');
     };
 
     return (

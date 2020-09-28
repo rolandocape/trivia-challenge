@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Selector.css';
 
@@ -18,6 +19,13 @@ const Selector = ({ id, value, options, changed }) => {
             </select>
         </div>
     )
+}
+
+Selector.propTypes = {
+    id: PropTypes.string,
+    value: PropTypes.string,
+    options: PropTypes.arrayOf(PropTypes.object),
+    changed: PropTypes.func
 }
 
 export default Selector;
