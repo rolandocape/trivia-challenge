@@ -23,7 +23,10 @@ const Selector = ({ id, value, options, changed }) => {
 
 Selector.propTypes = {
     id: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]),
     options: PropTypes.arrayOf(PropTypes.object),
     changed: PropTypes.func
 }

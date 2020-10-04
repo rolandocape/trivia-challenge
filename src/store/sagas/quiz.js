@@ -8,7 +8,7 @@ function* getQuizData(action) {
     yield put(loadedQuiz(quiz));
 }
 
-export function* quizSaga() {
+export default function* quizSaga() {
     yield takeEvery(START_QUIZ, getQuizData);
 }
 
